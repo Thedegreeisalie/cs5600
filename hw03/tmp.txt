@@ -1,0 +1,5 @@
+Net1 is 784, 500, 60, 30, 10 and accieved 95%
+Net2 is 784, 500, 300, 60, 30 10 and got 93%
+Net3 is 784, 60,10 and accieved 86%
+net4 is 784, 80, 10, and achieved 86%
+net5 is 784, 800, 10, and acheived 64%

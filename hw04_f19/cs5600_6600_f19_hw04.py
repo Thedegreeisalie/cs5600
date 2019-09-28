@@ -407,7 +407,7 @@ def collect_2_hidden_layer_net_stats(lower_num_hidden_nodes,
         for j in range(i, upper_num_hidden_nodes + 1):
             net = network2.Network([784,j, i,10], cost=cost_function)
             net_stats = net.SGD(train_data, num_epochs, mbs, eta, lmbda, eval_data, monitor_evaluation_cost=True, monitor_evaluation_accuracy=True, monitor_training_cost=True, monitor_training_accuracy=True)
-            hidden_layer_net_stats["{}_{}".format(i, j)] = net_stats
+            hidden_layer_net_stats["{}_{}".format(j, i)] = net_stats
     return hidden_layer_net_stats
     
 
@@ -424,7 +424,11 @@ def collect_3_hidden_layer_net_stats(lower_num_hidden_nodes,
     for i in range(lower_num_hidden_nodes, upper_num_hidden_nodes + 1):
         for j in range(i, upper_num_hidden_nodes + 1):
             for k in range(j, upper_num_hidden_nodes + 1):
-                net = network2.Network([784, k, j, i,10], cost=cost_function)
+                net = network2.Network([784, i, j, k, 10], cost=cost_function)
                 net_stats = net.SGD(train_data, num_epochs, mbs, eta, lmbda, eval_data, monitor_evaluation_cost=True, monitor_evaluation_accuracy=True, monitor_training_cost=True, monitor_training_accuracy=True)
                 hidden_layer_net_stats["{}_{}_{}".format(i, j, k)] = net_stats
     return hidden_layer_net_stats
+
+# net1.pck is 784 X 91 X 10
+# net2.pck is 784 X 59 X 32 X 10
+
