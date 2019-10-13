@@ -421,9 +421,10 @@ def collect_3_hidden_layer_net_stats(lower_num_hidden_nodes,
                                      train_data,
                                      eval_data):
     hidden_layer_net_stats = {}
-    for i in range(lower_num_hidden_nodes, upper_num_hidden_nodes + 1):
-        for j in range(i, upper_num_hidden_nodes + 1):
-            for k in range(j, upper_num_hidden_nodes + 1):
+    for i in range(lower_num_hidden_nodes, upper_num_hidden_nodes + 1, 5):
+        for j in range(i, upper_num_hidden_nodes + 1, 5):
+            for k in range(j, upper_num_hidden_nodes + 1, 5):
+                print "training network {}_{}_{}".format(i,j,k) 
                 net = network2.Network([784, k, j, i,10], cost=cost_function)
                 net_stats = net.SGD(train_data, num_epochs, mbs, eta, lmbda, eval_data, monitor_evaluation_cost=True, monitor_evaluation_accuracy=True, monitor_training_cost=True, monitor_training_accuracy=True)
                 hidden_layer_net_stats["{}_{}_{}".format(i, j, k)] = net_stats
