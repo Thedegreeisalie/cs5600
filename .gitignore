@@ -6,3 +6,11 @@
 *gym*
 *.gz
 
+BEE*
+BUZZ*
+*.pck
+*.tfl
+*pycache*
+mnist/*
+*checkpoint
+trained_nets/*
