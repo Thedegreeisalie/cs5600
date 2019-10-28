@@ -5,11 +5,12 @@
 *.tfl*
 *gym*
 *.gz
+*/gym/*
 BEE*
 BUZZ*
-*.pck
-*.tfl
 *pycache*
 mnist/*
+data/*
 *checkpoint
 trained_nets/*
+hw06_f19/hw06/*

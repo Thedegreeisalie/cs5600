@@ -22,11 +22,7 @@ class Model:
         self._define_model()
         
     def _define_model(self):
-<<<<<<< HEAD
         self._define_model_2()
-=======
-        self._define_model_1()
->>>>>>> cc3c5691a586da21b55a86765684e6af172521f2
 
     def _define_model_1(self):
         self._states = tf.placeholder(shape=[None, self._num_states],
@@ -45,7 +41,6 @@ class Model:
         self._optimizer = tf.train.AdamOptimizer().minimize(loss)
         self._var_init = tf.global_variables_initializer()
 
-<<<<<<< HEAD
     def _define_model_2(self):
         self._states = tf.placeholder(shape=[None, self._num_states],
                                       dtype=tf.float32)
@@ -98,19 +93,6 @@ class Model:
         loss = tf.losses.mean_squared_error(self._q_s_a, self._logits)
         self._optimizer = tf.train.AdamOptimizer().minimize(loss)
         self._var_init = tf.global_variables_initializer()
-=======
-#    def _define_model_2(self):
-#        ## your code here.
-#
-#    def _define_model_3(self):
-#        ## your code here.
-#
-#    def _define_model_4(self):
-#        ## your code here.
-#
-#    def _define_model_5(self):
-#        ## your code here.
->>>>>>> cc3c5691a586da21b55a86765684e6af172521f2
     
     # take a state and a session and use the network to predict
     # the next state. state is a vector of 2 floats, e.g., [-0.61506952 -0.00476815].

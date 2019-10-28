@@ -1,2 +1,7 @@
+<<<<<<< HEAD
+model_checkpoint_path: "/home/jer/Workspace/cs5600/hw06_f19/hw06_my_net_01.tfl"
+all_model_checkpoint_paths: "/home/jer/Workspace/cs5600/hw06_f19/hw06_my_net_01.tfl"
+=======
 model_checkpoint_path: "/home/jer/Workspace/cs5600/hw06_f19/hw06_my_net_02.tfl"
 all_model_checkpoint_paths: "/home/jer/Workspace/cs5600/hw06_f19/hw06_my_net_02.tfl"
+>>>>>>> cc3c5691a586da21b55a86765684e6af172521f2

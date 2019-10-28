@@ -10,11 +10,7 @@ import math
 
 MAX_EPSILON = 1
 MIN_EPSILON = 0.01
-<<<<<<< HEAD
 LAMBDA = 0.001
-=======
-LAMBDA = 0.0001
->>>>>>> cc3c5691a586da21b55a86765684e6af172521f2
 GAMMA = 0.99
 BATCH_SIZE = 50
 
@@ -232,11 +228,7 @@ def train_mcar():
         sess.run(model.var_init)
         mc = MCar(sess, model, env, mem, MAX_EPSILON, MIN_EPSILON, LAMBDA)
         # change the number of episodes as needed
-<<<<<<< HEAD
         num_episodes = 150
-=======
-        num_episodes = 10
->>>>>>> cc3c5691a586da21b55a86765684e6af172521f2
         cnt = 0
         while cnt < num_episodes:
             if cnt % 10 == 0:
@@ -249,11 +241,8 @@ def train_mcar():
         plt.close("all")
         plt.plot(mc.max_x_store)
         plt.show()
-<<<<<<< HEAD
         print('total award: {}'.format(sum(mc.max_x_store)))
         print("Average x: {}".format(sum(mc.reward_store)/len(mc.reward_store)))
-=======
->>>>>>> cc3c5691a586da21b55a86765684e6af172521f2
 
 if __name__ == '__main__':
     train_mcar()
