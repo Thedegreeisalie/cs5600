@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 *data/*
 *.zip
 *.pyc
@@ -6,7 +5,6 @@
 *.tfl*
 *gym*
 *.gz
-
 BEE*
 BUZZ*
 *.pck
@@ -15,9 +13,3 @@ BUZZ*
 mnist/*
 *checkpoint
 trained_nets/*
-=======
-*/data/*
-*.zip
-*.pyc
-*.gz
->>>>>>> a6249725a6008f20cec787d7926606c9d6a48f1c
