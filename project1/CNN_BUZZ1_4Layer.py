@@ -21,13 +21,13 @@ def class_search(element):
 
 #I dunno why bus some of the audio files change the type of the overal array to object I don't want so the if condition here excludes them (assuming the first element is not one of those strange files)
 def load_BUZZ1():
-    cricket_list = glob.glob('/home/jer/Workspace/cs5600/project1/BUZZ1/cricket/*.wav')
-    bee_list = glob.glob('/home/jer/Workspace/cs5600/project1/BUZZ1/bee/*.wav')
-    noise_list = glob.glob('/home/jer/Workspace/cs5600/project1/BUZZ1/noise/*.wav')
+    cricket_list = glob.glob('/home/jer/Workspace/cs5600/project1/BUZZ2/cricket/*.wav')
+    bee_list = glob.glob('/home/jer/Workspace/cs5600/project1/BUZZ2/bee/*.wav')
+    noise_list = glob.glob('/home/jer/Workspace/cs5600/project1/BUZZ2/noise/*.wav')
     #my computer can't handle all the data at one time so I'm going to randomly sample 6000 of the sequences but I want to sample them evenly from each group
-    test_bee_list = glob.glob('/home/jer/Workspace/cs5600/project1/BUZZ1/out_of_sample_data_for_validation/bee_test/*.wav')
-    test_cricket_list = glob.glob('/home/jer/Workspace/cs5600/project1/BUZZ1/out_of_sample_data_for_validation/cricket_test/*.wav')
-    test_noise_list = glob.glob('/home/jer/Workspace/cs5600/project1/BUZZ1/out_of_sample_data_for_validation/noise_test/*.wav')
+    test_bee_list = glob.glob('/home/jer/Workspace/cs5600/project1/BUZZ2/out_of_sample_data_for_validation/bee_test/*.wav')
+    test_cricket_list = glob.glob('/home/jer/Workspace/cs5600/project1/BUZZ2/out_of_sample_data_for_validation/cricket_test/*.wav')
+    test_noise_list = glob.glob('/home/jer/Workspace/cs5600/project1/BUZZ2/out_of_sample_data_for_validation/noise_test/*.wav')
     audio_list = cricket_list + bee_list + noise_list
     test_audio_list = test_cricket_list + test_bee_list + test_noise_list
     obj_list = np.array([(wavfile.read(element)[1], class_search(element)) for element in audio_list])
@@ -68,6 +68,6 @@ model = tflearn.DNN(network)
 if(os.path.exists(CHECK_POINT)):
     model.load(SAVE_POINT)
 #
-model.fit(X, Y, validation_set=(testX, testY), n_epoch=100, shuffle=True, show_metric=True, run_id=f'{NAME}')
+model.fit(X, Y, validation_set=(testX, testY), n_epoch=50, shuffle=True, show_metric=True, run_id=f'{NAME}')
 model.save(SAVE_POINT)
 
