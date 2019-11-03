@@ -45,16 +45,16 @@ def load_BUZZ1():
 
 X, Y, testX, testY = load_BUZZ1()
 
-X = X.reshape([-1, 441, 100, 1])
-testX = testX.reshape([-1, 441, 100, 1])
+X = X.reshape([-1, 44100, 1])
+testX = testX.reshape([-1, 44100, 1])
 
-input_layer = input_data(shape=[None, 441, 100, 1])
+input_layer = input_data(shape=[None, 44100, 1])
 
 fc_layer_1  = fully_connected(input_layer, 6650 , activation='tanh',name='fc_layer_1')
-dropout_1 = dropout(fc_layer_1, 0.8)
+dropout_1 = dropout(fc_layer_1, 0.5)
 
 fc_layer_2 = fully_connected(dropout_1, 665,activation='tanh',name='fc_layer_2')
-dropout_2 = dropout(fc_layer_2, 0.8)
+dropout_2 = dropout(fc_layer_2, 0.5)
 
 fc_layer_3 = fully_connected(dropout_2, 100,activation='relu',name='fc_layer_3')
 dropout_3 = dropout(fc_layer_3, 0.5)
